@@ -68,9 +68,12 @@ p {
 
 .x-icon {
   font-size: 20px;
+  width: 29px;
+  border-radius: 50%;
 }
 
 .x-icon:hover {
   color: red;
+  background-color: #eaecee;
   transition: all 0.3s;
 }

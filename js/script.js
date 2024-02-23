@@ -14,7 +14,9 @@ taskContainer.addEventListener("click", function (e) {
   checkBtn.src === `http://127.0.0.1:5500/svg/empty-circle.svg`
     ? (checkBtn.src = `svg/tick-icon.svg`)
     : (checkBtn.src = `svg/empty-circle.svg`);
+  saveData();
   if (clicked.classList.contains("x-icon")) task.remove();
+  saveData();
 });
 
 addBtn.addEventListener("click", function () {
@@ -25,9 +27,15 @@ addBtn.addEventListener("click", function () {
         <img class="check-icon" src="svg/empty-circle.svg" alt="" />
           <p class="task-text ps-1">${inp.value}</p>
       </div>
-      <i class="bi bi-x x-icon"></i>
+      <i class="bi bi-x x-icon text-center"></i>
     </div>
   `;
   taskContainer.insertAdjacentHTML("beforeend", taskHTML);
+  saveData();
   inp.value = "";
 });
+
+const saveData = () => localStorage.setItem("data", taskContainer.innerHTML);
+const restoreData = () =>
+  (taskContainer.innerHTML = localStorage.getItem("data"));
+restoreData();
