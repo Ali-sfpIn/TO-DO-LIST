@@ -1,0 +1,76 @@
+body {
+  background-color: #2a2c75;
+  font-family: sintony;
+}
+
+.to-do-list {
+  width: 450px;
+  height: fit-content;
+  cursor: context-menu;
+}
+
+.to-do-title {
+  color: #28345e;
+  font-size: 20px;
+}
+
+.task-adder-inp {
+  background-color: #eaecee;
+  outline: none;
+  height: 30px;
+  width: 300px;
+}
+
+.task-adder-inp,
+.add-task-btn {
+  border-radius: 15px;
+}
+
+.task-adder-inp::placeholder,
+.task-adder-inp {
+  font-size: 14px;
+}
+
+.add-task-btn {
+  background-color: #ff653e;
+  border: none;
+  font-size: 12px;
+  height: 30px;
+  width: 50px;
+  right: 75px;
+}
+
+.check-circle {
+  accent-color: #ff653e;
+}
+
+input[type="checkbox"] {
+  color: white;
+}
+
+.task {
+  cursor: pointer;
+  width: 312px;
+}
+
+.check-icon {
+  width: 18px;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: #c6c7c9;
+}
+
+p {
+  margin: 0;
+}
+
+.x-icon {
+  font-size: 20px;
+}
+
+.x-icon:hover {
+  color: red;
+  transition: all 0.3s;
+}
