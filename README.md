@@ -1,4 +1,4 @@
 ## TO-DO list
-* add your tasks
-* check your tasks
-* store and restore your data!
+* Add your tasks
+* Check your tasks
+* Store and restore your data!
