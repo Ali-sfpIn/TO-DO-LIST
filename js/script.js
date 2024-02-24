@@ -1,23 +1,9 @@
 "use strict";
 // SELECTIONS...
 const taskContainer = document.querySelector(".task-container");
-const task = document.querySelector(".task");
 const inp = document.querySelector(".task-adder-inp");
 const addBtn = document.querySelector(".add-task-btn");
 // EVENT HANDLERS...
-taskContainer.addEventListener("click", function (e) {
-  const clicked = e.target;
-  if (clicked.closest(".task"));
-  const task = clicked.closest(".task");
-  task.classList.toggle("checked");
-  const checkBtn = task.querySelector(".check-icon");
-  checkBtn.src === `http://127.0.0.1:5500/svg/empty-circle.svg`
-    ? (checkBtn.src = `svg/tick-icon.svg`)
-    : (checkBtn.src = `svg/empty-circle.svg`);
-  saveData();
-  if (clicked.classList.contains("x-icon")) task.remove();
-  saveData();
-});
 
 addBtn.addEventListener("click", function () {
   if (!inp.value) return;
@@ -33,6 +19,20 @@ addBtn.addEventListener("click", function () {
   taskContainer.insertAdjacentHTML("beforeend", taskHTML);
   saveData();
   inp.value = "";
+});
+
+taskContainer.addEventListener("click", function (e) {
+  const clicked = e.target;
+  if (clicked.closest(".task"));
+  const task = clicked.closest(".task");
+  task.classList.toggle("checked");
+  const checkBtn = task.querySelector(".check-icon");
+  checkBtn.src === `http://127.0.0.1:5500/svg/empty-circle.svg`
+    ? (checkBtn.src = `svg/tick-icon.svg`)
+    : (checkBtn.src = `svg/empty-circle.svg`);
+  saveData();
+  if (clicked.classList.contains("x-icon")) task.remove();
+  saveData();
 });
 
 const saveData = () => localStorage.setItem("data", taskContainer.innerHTML);
