@@ -23,13 +23,13 @@ addBtn.addEventListener("click", function () {
 
 taskContainer.addEventListener("click", function (e) {
   const clicked = e.target;
-  if (clicked.closest(".task"));
+  if (!clicked.closest(".task")) return;
   const task = clicked.closest(".task");
   task.classList.toggle("checked");
   const checkBtn = task.querySelector(".check-icon");
-  checkBtn.src === `http://127.0.0.1:5500/svg/empty-circle.svg`
-    ? (checkBtn.src = `svg/tick-icon.svg`)
-    : (checkBtn.src = `svg/empty-circle.svg`);
+  checkBtn.src = task.classList.contains("checked")
+    ? `svg/tick-icon.svg`
+    : `svg/empty-circle.svg`;
   saveData();
   if (clicked.classList.contains("x-icon")) task.remove();
   saveData();
